@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1030724482306",
+    "project_id": "gruastul-6edf5",
+    "storage_bucket": "gruastul-6edf5.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1030724482306:android:29bd0dfbfe8f429e48fe1b",
+        "android_client_info": {
+          "package_name": "com.gruastul.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCx52UGE0WXq3BVMGs1fPfQ1NdZ3dCIO9I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
