@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F5F5">
+
+    <!-- Toolbar -->
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#1976D2"
+        android:elevation="4dp"
+        app:navigationIcon="@android:drawable/ic_menu_close_clear_cancel"
+        app:title="Nueva Cotización"
+        app:titleTextColor="#FFFFFF"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="24dp">
+
+            <!-- Indicador de paso -->
+            <TextView
+                android:id="@+id/tvIndicadorPaso"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Paso 3 de 3"
+                android:textSize="14sp"
+                android:textColor="#666666"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <!-- Card de info pasos anteriores -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardInfoPasosAnteriores"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="2dp"
+                app:cardBackgroundColor="#E3F2FD"
+                app:layout_constraintTop_toBottomOf="@id/tvIndicadorPaso">
+
+                <TextView
+                    android:id="@+id/tvInfoPasosAnteriores"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:text="Resumen"
+                    android:textSize="14sp"
+                    android:textColor="#1976D2" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Card principal -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardPrincipal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="4dp"
+                app:layout_constraintTop_toBottomOf="@id/cardInfoPasosAnteriores">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="24dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Condición del Servicio"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:textColor="#333333" />
+
+                    <!-- Spinner Condición -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:text="Estado del vehículo:"
+                        android:textSize="14sp"
+                        android:textColor="#666666" />
+
+                    <Spinner
+                        android:id="@+id/spinnerCondicion"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="8dp"
+                        android:background="@android:drawable/edit_text"
+                        android:padding="12dp" />
+
+                    <!-- Spinner Horario -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="24dp"
+                        android:text="Horario del servicio:"
+                        android:textSize="14sp"
+                        android:textColor="#666666" />
+
+                    <Spinner
+                        android:id="@+id/spinnerHorario"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="8dp"
+                        android:background="@android:drawable/edit_text"
+                        android:padding="12dp" />
+
+                    <!-- Info temporal casetas -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="24dp"
+                        android:text="💡 Las casetas se calcularán automáticamente (simulado por ahora)"
+                        android:textSize="12sp"
+                        android:textColor="#FF9800"
+                        android:padding="8dp"
+                        android:background="#FFF3E0" />
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Botón Calcular -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnCalcular"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="32dp"
+                android:text="CALCULAR COTIZACIÓN"
+                android:textSize="16sp"
+                app:cornerRadius="8dp"
+                app:layout_constraintTop_toBottomOf="@id/cardPrincipal" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

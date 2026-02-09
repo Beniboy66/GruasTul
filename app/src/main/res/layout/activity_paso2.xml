@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F5F5">
+
+    <!-- Toolbar -->
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#1976D2"
+        android:elevation="4dp"
+        app:navigationIcon="@android:drawable/ic_menu_close_clear_cancel"
+        app:title="Nueva Cotización"
+        app:titleTextColor="#FFFFFF"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="24dp">
+
+            <!-- Indicador de paso -->
+            <TextView
+                android:id="@+id/tvIndicadorPaso"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Paso 2 de 3"
+                android:textSize="14sp"
+                android:textColor="#666666"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <!-- Card de info ubicaciones -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardInfoUbicaciones"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="2dp"
+                app:cardBackgroundColor="#E3F2FD"
+                app:layout_constraintTop_toBottomOf="@id/tvIndicadorPaso">
+
+                <TextView
+                    android:id="@+id/tvInfoUbicaciones"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:text="De: [Origen]\nA: [Destino]\nDistancia aprox: XX km"
+                    android:textSize="14sp"
+                    android:textColor="#1976D2" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Título -->
+            <TextView
+                android:id="@+id/tvTitulo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="Selecciona el tipo de vehículo"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#333333"
+                app:layout_constraintTop_toBottomOf="@id/cardInfoUbicaciones"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/tvSubtitulo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Elige el vehículo a remolcar"
+                android:textSize="14sp"
+                android:textColor="#666666"
+                app:layout_constraintTop_toBottomOf="@id/tvTitulo"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <!-- Mensaje de vehículo seleccionado -->
+            <TextView
+                android:id="@+id/tvVehiculoSeleccionado"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:padding="12dp"
+                android:text="✓ Seleccionado: Auto Compacto"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="#4CAF50"
+                android:background="#E8F5E9"
+                android:visibility="gone"
+                app:layout_constraintTop_toBottomOf="@id/tvSubtitulo" />
+
+            <!-- RecyclerView de vehículos -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvVehiculos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:layout_constraintTop_toBottomOf="@id/tvVehiculoSeleccionado" />
+
+            <!-- Botón Siguiente -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnSiguiente"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="24dp"
+                android:text="SIGUIENTE"
+                android:textSize="16sp"
+                app:cornerRadius="8dp"
+                app:layout_constraintTop_toBottomOf="@id/rvVehiculos" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
