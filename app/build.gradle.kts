@@ -14,8 +14,7 @@ android {
         targetSdk = 36
         versionCode = 1
         versionName = "1.0"
-
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnit4Runner"
     }
 
     buildTypes {
@@ -43,20 +42,28 @@ android {
 }
 
 dependencies {
-    // Firebase BOM (Bill of Materials) - maneja las versiones automáticamente
+    // Firebase
     implementation(platform("com.google.firebase:firebase-bom:33.7.0"))
     implementation("com.google.firebase:firebase-analytics")
     implementation("com.google.firebase:firebase-auth")
     implementation("com.google.firebase:firebase-firestore")
 
-    // Navigation Component
+    // Navigation
     implementation("androidx.navigation:navigation-fragment-ktx:2.7.6")
     implementation("androidx.navigation:navigation-ui-ktx:2.7.6")
 
-    // Lifecycle
+    // Lifecycle + Coroutines
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0")
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.7.0")
+    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.7.0")
     implementation("androidx.fragment:fragment-ktx:1.6.2")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
+
+    // Mapbox Maps SDK (solo el mapa visual)
+    implementation("com.mapbox.maps:android:11.9.0")
+
+    // OkHttp para Geocoding REST + TollGuru
+    implementation("com.squareup.okhttp3:okhttp:4.12.0")
 
     // AndroidX
     implementation(libs.androidx.core.ktx)
@@ -65,7 +72,6 @@ dependencies {
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
 
-    // Testing
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

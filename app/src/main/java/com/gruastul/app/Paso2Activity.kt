@@ -58,6 +58,8 @@ class Paso2Activity : AppCompatActivity() {
                 intent.putExtra("vehiculoNombre", vehiculoSeleccionado!!.nombre)
                 intent.putExtra("precioBase", vehiculoSeleccionado!!.precioBase)
                 intent.putExtra("precioPorKm", vehiculoSeleccionado!!.precioPorKm)
+                intent.putExtra("rutaPolyline", intent.getStringExtra("rutaPolyline") ?: "")
+                intent.putExtra("rutaCoordenadas", intent.getStringExtra("rutaCoordenadas") ?: "")
                 startActivity(intent)
             } else {
                 Toast.makeText(this, "Selecciona un tipo de vehículo", Toast.LENGTH_SHORT).show()
